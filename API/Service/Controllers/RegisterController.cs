@@ -154,6 +154,7 @@ namespace API.Service.Controllers
             }
             return cipherText;
         }
+
         //Insertion
         [HttpPost]
         [Route("add")]
@@ -161,12 +162,28 @@ namespace API.Service.Controllers
         {
             try
             {
+                 IEnumerable<Users> CheckEmail = _accountRepository.FindByCondition(x => x.Email == userdata.Email);
+                 IEnumerable<Users> CheckMobile = _accountRepository.FindByCondition(x => x.Mobile == userdata.Mobile);
+                 IEnumerable<Users> CheckMobileEmail = _accountRepository.FindByCondition(x => x.Mobile == userdata.Mobile && x.Email == userdata.Email );
+
+            if (CheckMobileEmail != null && CheckMobileEmail.Count() > 0)
+            {
+                return new ResponseEntity<Users> { Responsecode = 4, ResponseMessage = "Email and mobile number already exitst!", Entity = null, EnityList = null };
+            }else if (CheckEmail != null && CheckEmail.Count() > 0)
+            {
+               return new ResponseEntity<Users> { Responsecode = 2, ResponseMessage = "Email already exitst!", Entity = null, EnityList = null };
+            }else if (CheckMobile != null && CheckMobile.Count() > 0)
+            {
+                 return new ResponseEntity<Users> { Responsecode = 3, ResponseMessage = "Mobile number already exitst!", Entity = null, EnityList = null };
+            }else{
+
                 var password = Encrypt(userdata.Password);
                 userdata.Password = password;
                 userdata.CreatedDate = DateTime.Now;
                 userdata.ModifiedDate = DateTime.Now;
                 _accountRepository.Create(userdata);
                 return new ResponseEntity<Users> { Responsecode = 1, ResponseMessage = "Success!", Entity = null, EnityList = null };
+            }
             }
             catch (Exception)
             {
@@ -226,6 +243,7 @@ namespace API.Service.Controllers
             }
 
         }
+       
     }
 }
 

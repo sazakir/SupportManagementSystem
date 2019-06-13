@@ -18,21 +18,31 @@
                    [ngClass]="{ 'is-invalid': submitted && form.get(input.controlName).errors}" />
             <div *ngIf="submitted && form.get(input.controlName).errors" class="invalid-feedback">
               <div class = "error" *ngIf="form.get(input.controlName).errors.required">{{input.controlName}} is required</div>
+              <div class = "error" *ngIf="form.get(input.controlName).errors.maxlength">Maximum length is {{input.validators.maxlength}}</div>
               <div class = "error" *ngIf="form.get(input.controlName).errors.minlength">Minimum length is {{input.validators.minlength}}</div>
               <div class = "error" *ngIf="form.get(input.controlName).errors.pattern">{{input.validators.message}}</div>
+              <!-- <div class = "error" *ngIf="form.get(input.controlName).errors.mismatch">Confirm Password Confirmation must
+                match password</div> -->
+          </div>
+          <!-- <div *ngIf="input.controlName == 'Email'"> 
+            <div class = "error" *ngIf="Emailexitst == true">Email already Exits!</div>
+        </div> -->
+          <div *ngIf="input.controlName == 'Email'"> 
+              <div class = "error" *ngIf="Emailexitst == true">Email already Exits!</div>
+          </div>
+          <div *ngIf="input.controlName == 'Mobile'" >
+              <div class = "error" *ngIf="Mobileexitst == true">Mobile Number already Exits!</div>
           </div>
           </div>
         </ng-template>
-  
       </ng-container>
-  
     </ng-template>
     <!-- [disabled]="form.invalid" -->
     <button type="submit" >
       Submit
     </button>
     <div *ngIf="submitted">
-      <!-- <pre>{{form.value | json}}</pre> -->
+      <div class = "error" *ngIf="Register == true">Registration Success</div>
     </div>
   </form>
   

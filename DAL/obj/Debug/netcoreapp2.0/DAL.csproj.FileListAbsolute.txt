@@ -1,0 +1,9 @@
+C:\Users\10927\Documents\GitHub\SupportManagementSystem\DAL\bin\Debug\netcoreapp2.0\DAL.deps.json
+C:\Users\10927\Documents\GitHub\SupportManagementSystem\DAL\bin\Debug\netcoreapp2.0\DAL.dll
+C:\Users\10927\Documents\GitHub\SupportManagementSystem\DAL\bin\Debug\netcoreapp2.0\DAL.pdb
+C:\Users\10927\Documents\GitHub\SupportManagementSystem\DAL\obj\Debug\netcoreapp2.0\DAL.csprojAssemblyReference.cache
+C:\Users\10927\Documents\GitHub\SupportManagementSystem\DAL\obj\Debug\netcoreapp2.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\10927\Documents\GitHub\SupportManagementSystem\DAL\obj\Debug\netcoreapp2.0\DAL.AssemblyInfoInputs.cache
+C:\Users\10927\Documents\GitHub\SupportManagementSystem\DAL\obj\Debug\netcoreapp2.0\DAL.AssemblyInfo.cs
+C:\Users\10927\Documents\GitHub\SupportManagementSystem\DAL\obj\Debug\netcoreapp2.0\DAL.dll
+C:\Users\10927\Documents\GitHub\SupportManagementSystem\DAL\obj\Debug\netcoreapp2.0\DAL.pdb

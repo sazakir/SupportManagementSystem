@@ -1,3 +1,4 @@
+<div clasee = .auth.auth-bg-1>
 <form [formGroup]="form" (submit)="submitForm()">
 
   <ng-template ngFor let-input [ngForOf]="formData" >
@@ -21,6 +22,9 @@
             <div class = "error" *ngIf="form.get(input.controlName).errors.minlength">Minimum length is {{input.validators.minlength}}</div>
             <div class = "error" *ngIf="form.get(input.controlName).errors.pattern">{{input.validators.message}}</div>
         </div>
+        <div *ngIf="input.controlName == 'Password'" >
+          <div class = "error" *ngIf="login == true">Invalid Password</div>
+      </div>
         </div>
       </ng-template>
 
@@ -33,7 +37,7 @@
       Submit
     </button>
     <div *ngIf="submitted">
-      <!-- <pre>{{form.value | json}}</pre> -->
+      <!-- <div class = "error" *ngIf="login == true">Invalid Password</div> -->
     </div>
   </td>
 <td>
@@ -42,3 +46,4 @@
 </td></tr></table>
   
 </form>
+</div>

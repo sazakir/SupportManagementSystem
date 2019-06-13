@@ -8,7 +8,10 @@ form {
       flex-direction: row;
     }
   }
-
+  .auth.auth-bg-1 {
+    background: url(../../images/auth/login_1.jpg);
+    background-size: cover;
+}
   .error {
     font-style: italic;
     color: red

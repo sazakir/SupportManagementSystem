@@ -2,15 +2,14 @@ import { FormData } from './../interface/form-data';
 export const LoginForm: FormData[] = [
   
   {
-    controlName: 'UserName',
+    controlName: 'Email',
     controlType: 'text',
     valueType: 'text',
-    placeholder: 'Enter username',
+    placeholder: 'Enter Email Address',
     validators: {
       required: true,
-      minlength: 6,
-      pattern: /^[a-zA-Z]+$/,
-      message: ' Only Alphabet is allowed'
+      pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/,
+      message: 'Invalid email'
     }
   },
   {

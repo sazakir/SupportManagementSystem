@@ -3,9 +3,9 @@
       flex-direction: column;
       margin-bottom: 5px;
   
-      &.row {
+      /* &.row {
         flex-direction: row;
-      }
+      } */
     }
   
     .error {

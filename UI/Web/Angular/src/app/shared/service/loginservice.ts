@@ -1,9 +1,10 @@
+import {Component} from '@angular/core'
 import { Injectable }   from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
-export class Service {
+export class LoginService {
   user : string;
   readonly rootURL = "http://localhost:5000/api/register"
   constructor(private http: HttpClient) { }
@@ -14,22 +15,15 @@ export class Service {
         'Access-Control-Allow-Origin': 'http://localhost:4200/'
     })
 };
-register(form : any ) {
+login(form : any ) {
   console.log(form);
   var Data =
   {
-      FirstName: form.FirstName,
-      LastName: form.LastName,
-      UserName: form.FirstName,
-      Email: form.email,
-      Mobile: form.PhoneName,
-      Password:  form.password,
-      IsActive: 1,
-      IsDeleted: 0,
-      Role: 2
+    Email: form.Email,
+    Password:  form.Password
   };
 
   console.log(Data);
-  return this.http.post(this.rootURL + `/add/`, Data, this.httpOptions);
+  return this.http.post(this.rootURL + `/login/`, Data, this.httpOptions);
 }
 }

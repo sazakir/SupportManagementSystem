@@ -32,7 +32,6 @@ namespace DAL.Data
         {
             return this._context.CommonEntity.Find(expression).ToList();
         }
-
         public void Create(T entity)
         {
             this._context.CommonEntity.InsertOne(entity);
